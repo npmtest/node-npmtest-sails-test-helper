@@ -1,1 +1,40 @@
-{     "devDependencies": {         "sails-test-helper": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-sails-test-helper",     "homepage": "https://github.com/npmtest/node-npmtest-sails-test-helper",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-sails-test-helper.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### test coverage for  [sails-test-helper (v0.5.0)](https://github.com/zand3rs/sails-test-helper)  [![npm package](https://img.shields.io/npm/v/npmtest-sails-test-helper.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-sails-test-helper) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-sails-test-helper.svg)](https://travis-ci.org/npmtest/node-npmtest-sails-test-helper)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "sails-test-helper": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-sails-test-helper",
+    "keywords": [
+        "coverage",
+        "test",
+        "sails-test-helper"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_sails_test_helper.js",
+    "name": "npmtest-sails-test-helper",
+    "nameAlias": "npmtest_sails_test_helper",
+    "nameOriginal": "npmtest-sails-test-helper",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-sails-test-helper.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
